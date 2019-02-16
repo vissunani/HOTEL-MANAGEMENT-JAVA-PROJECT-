@@ -1,0 +1,204 @@
+import java.util.*;
+import java.io.*;
+class Room
+{
+public void ac()throws IOException
+{
+Scanner s=new Scanner(System.in);
+System.out.println("ac room cost per day is 1000");
+String name;
+int d,t,m;
+System.out.println("enter how many days u want stay");
+d=s.nextInt();
+System.out.println("enter how many members");
+m=s.nextInt();
+System.out.println("enter ur name");
+name=s.next();
+t=1000*d;
+System.out.println("your total bill is"+t);
+File fil=new File("ac.txt");
+if(!fil.exists())
+{
+fil.createNewFile();
+}
+BufferedWriter bw=new BufferedWriter(new FileWriter("ac.txt",true));
+bw.write("number of days he/she want to stay"+d);
+bw.newLine();
+
+bw.write("number of members"+m);
+bw.newLine();
+bw.write("total bill"+t);
+bw.newLine();
+bw.write("name"+name);
+bw.write("\n");
+bw.newLine();
+bw.close();
+}
+public void nac()throws IOException
+{
+Scanner s=new Scanner(System.in);
+System.out.println("NON-ac room cost per day is 700");
+int d,t,m;
+String name;
+System.out.println("enter how many days u want stay");
+d=s.nextInt();
+System.out.println("enter how many members");
+m=s.nextInt();
+System.out.println("enter ur name");
+name=s.next();
+t=700*d;
+System.out.println("your total bill is"+t);
+File fil=new File("nac.txt");
+if(!fil.exists())
+{
+fil.createNewFile();
+
+}
+BufferedWriter bw=new BufferedWriter(new FileWriter("nac.txt",true));
+bw.write("number of days he/she want to stay"+d);
+bw.newLine();
+bw.write("number of members"+m);
+bw.newLine();
+bw.write("total bill"+t);
+bw.newLine();
+bw.write("name"+name);
+bw.newLine();
+bw.write("\n");
+bw.newLine();
+bw.close();
+}
+public void acd()throws IOException
+{
+Scanner s=new Scanner(System.in);
+System.out.println("ac-deluxe room cost per day is 1500");
+int d,t,m;
+String name;
+System.out.println("enter how many days u want stay");
+d=s.nextInt();
+System.out.println("enter how many members");
+m=s.nextInt();
+System.out.println("enter ur name");
+name=s.next();
+t=1500*d;
+
+System.out.println("your total bill is"+t);
+File fil=new File("acd.txt");
+if(!fil.exists())
+{
+fil.createNewFile();
+}
+BufferedWriter bw=new BufferedWriter(new FileWriter("acd.txt",true));
+bw.write("number of days he/she want to stay"+d);
+bw.newLine();
+bw.write("number of members"+m);
+bw.newLine();
+bw.write("total bill"+t);
+bw.newLine();
+bw.write("name"+name);
+bw.newLine();
+bw.write("\n");
+bw.newLine();
+bw.close();
+}
+public void nacd()throws IOException
+{
+Scanner s=new Scanner(System.in);
+System.out.println("non-ac deluxe room cost per day is 900");
+int d,t,m;
+String name;
+System.out.println("enter how many days u want stay");
+d=s.nextInt();
+
+System.out.println("enter how many members");
+m=s.nextInt();
+System.out.println("enter ur name");
+name=s.next();
+t=900*d;
+System.out.println("your total bill is"+t);
+File fil=new File("nacd.txt");
+if(!fil.exists())
+{
+fil.createNewFile();
+}
+BufferedWriter bw=new BufferedWriter(new FileWriter("nacd.txt",true));
+bw.write("number of days he/she want to stay"+d);
+bw.newLine();
+bw.write("number of members"+m);
+bw.newLine();
+bw.write("total bill"+t);
+bw.newLine();
+bw.write("name"+name);
+bw.write("\n");
+bw.newLine();
+bw.close();
+}
+public void disp()
+{
+Scanner s=new Scanner(System.in);
+System.out.println("1.ac");
+
+System.out.println("2.nac");
+System.out.println("3.acd");
+System.out.println("4.nacd");
+}
+}
+
+class H
+{
+public static void main(String args[])
+{
+int i;
+System.out.println("welcome to KLU Hotel");
+System.out.println("the rooms types which are available in our hotel are:");
+Room r=new Room();
+r.disp();
+Scanner s=new Scanner(System.in);
+System.out.println("enter ur choice");
+i=s.nextInt();
+switch(i)
+{
+case 1:
+try
+{
+r.ac();
+}
+catch(Exception e)
+{
+
+System.out.println("error");
+}
+break;
+case 2:
+try
+{
+r.nac();
+}
+catch(Exception e)
+{
+System.out.println("error");
+}
+break;
+case 3:
+try
+{
+r.acd();
+}
+catch(Exception e)
+{
+System.out.println("error");
+}
+break;
+case 4:
+try
+{
+r.nacd();
+
+}
+catch(Exception e)
+{
+System.out.println("error");
+}
+break;
+}
+}
+}
